@@ -1,5 +1,3 @@
-import es.Director
-
 class Timestamp(val seconds: Long)
 
 object Timestamp {

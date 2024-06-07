@@ -1,5 +1,3 @@
-import es.{Director, Film}
-
 class Cat(val colour: String, val food: String)
 
 val oswald = new Cat("Black", "Milk")
@@ -50,16 +48,6 @@ thomasCrownAffair.copy(yearOfRelease = 1968,
 
 inception.copy().copy().copy()
 // res21: Film = Film(Inception,2010,8.8,es.Director(Christopher,Nolan,1970))
-
-class Adder(amount: Int) {
-  def add(in: Int) = in + amount
-}
-
-class Counter(val count: Int = 1) {
-  def inc = new Counter(count + 1)
-  def dec = new Counter(count - 1)
-  def adjust(adder: Adder) = new Counter(adder.add(count))
-}
 
 new Counter(10).inc.dec.inc.inc.count
 
