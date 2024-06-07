@@ -1,1 +1,1 @@
-case class Cat(colour: String, food: String)
+case class Cat(name: String, colour: String, food: String)
