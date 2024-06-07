@@ -1,7 +1,10 @@
 case class Film(name: String, yearOfRelease: Int, imdbRating: Double, director: Director) {
   def directorsAge: Int = yearOfRelease - director.yearOfBirth
-  def isDirectedBy(candidate: Director): Boolean = director == candidate
 
+  def isDirectedBy(candidate: Director): Boolean = director == candidate
+}
+
+object Film {
   def highestRating(f1: Film, f2: Film): Double =
     if (f1.imdbRating >= f2.imdbRating) f1.imdbRating
     else f2.imdbRating
