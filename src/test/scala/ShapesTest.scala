@@ -19,5 +19,4 @@ class ShapesTest extends FunSuite {
     assertEquals(rectangle.perimeter, 6.4)
     assertEquals(rectangle.area, 2.4)
   }
-
 }
