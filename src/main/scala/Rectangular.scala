@@ -6,13 +6,13 @@ sealed trait Rectangular extends Shape {
   override def area: Double = height * width
 }
 
-case class Rectangle(
+final case class Rectangle(
                  height: Double,
                  width: Double
                ) extends Rectangular {
 }
 
-case class Square(
+final case class Square(
               sideLength: Double
             ) extends Rectangular {
   val height: Double = sideLength

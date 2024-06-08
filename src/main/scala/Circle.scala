@@ -1,4 +1,4 @@
-case class Circle(
+final case class Circle(
                    radius: Double
                  ) extends Shape {
   override def sides: Int = 0
