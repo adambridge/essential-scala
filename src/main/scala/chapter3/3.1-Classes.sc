@@ -49,6 +49,6 @@ thomasCrownAffair.copy(yearOfRelease = 1968,
 inception.copy().copy().copy()
 // res21: Film = Film(Inception,2010,8.8,es.Director(Christopher,Nolan,1970))
 
-new Counter(10).inc.dec.inc.inc.count
+Counter(10).inc.dec.inc.inc.count
 
-new Counter(100).adjust(new Adder(50)).count
+Counter(100).adjust(new Adder(50)).count
