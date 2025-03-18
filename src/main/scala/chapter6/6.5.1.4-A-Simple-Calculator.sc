@@ -47,13 +47,18 @@ calculator("13", "/", "0")
 def flalculator(operand1: String, operator: String, operand2: String): Unit = {
   def readInt(s: String) = if ("-?\\d+".r matches s) Some(s.toInt) else None
 
+  def operate(o1: Int, op: String, o2: Int) =
+    op match {
+      case "+" => Some(o1 + o2)
+      case "-" => Some(o1 - o2)
+      case "*" => Some(o1 * o2)
+      case "/" => if (o2 == 0) None else Some(o1 / o2)
+    }
+
   val result = readInt(operand1).flatMap { o1 =>
-    readInt(operand2).map { o2 =>
-      operator match {
-        case "+" => Some(o1 + o2)
-        case "-" => Some(o1 - o2)
-        case "*" => Some(o1 * o2)
-        case "/" => if (o2 == 0) None else Some(o1 / o2)
+    readInt(operand2).flatMap { o2 =>
+      operate(o1, operator, o2).map { result =>
+        result
       }
     }
   }
