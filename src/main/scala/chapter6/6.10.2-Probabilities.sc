@@ -36,14 +36,14 @@ final case class Distribution[A](events: List[(A, Double)]) {
             case (Distribution(events), prob) => events.map((b, p) => (b, p * prob))
           }) ++ l
         })
-    )
+    ).compact.normalize
 
   def bookflatMap[B](f: A => Distribution[B]): Distribution[B] =
     Distribution(
       events flatMap { case (a, pa) =>
         f(a).events map { case (b, pb) => (b, pa * pb)}
       }
-    )
+    ).compact.normalize
 }
 
 val d1 = Distribution[Int](List((1, 0.2), (2, 0.8)))
